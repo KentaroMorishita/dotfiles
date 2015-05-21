@@ -72,12 +72,38 @@ vnoremap gs  :s///g<Left><Left><Left>
 
 
 
+set nocompatible               " be iMproved
+filetype off
 
 
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundle 'Shougo/neobundle.vim'
+  NeoBundle 'Shougo/vimproc.vim'
+ "NeoBundle 'Shougo/neocomplete.vim'
+  
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'tpope/vim-rails'
+  NeoBundle 'tpope/vim-endwise'
+  NeoBundle 'tomtom/tcomment_vim'
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'vim-scripts/AnsiEsc.vim'
+  NeoBundle 'bronson/vim-trailing-whitespace'
+
+  call neobundle#end()
+endif
+filetype plugin indent on     " required!
+filetype indent on
 
 
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
 
-
+set noswapfile
 
 
 
