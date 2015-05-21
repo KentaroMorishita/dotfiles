@@ -107,3 +107,5 @@ set noswapfile
 
 
 nnoremap <silent><C-e> :NERDTree<CR>
+nnoremap <C-n> gt
+nnoremap <C-p> gT
