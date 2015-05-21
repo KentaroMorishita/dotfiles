@@ -106,4 +106,4 @@ imap ( ()<LEFT>
 set noswapfile
 
 
-
+nnoremap <silent><C-e> :NERDTree<CR>
