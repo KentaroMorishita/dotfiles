@@ -83,7 +83,10 @@ if has('vim_starting')
   NeoBundle 'Shougo/neobundle.vim'
   NeoBundle 'Shougo/vimproc.vim'
  "NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'gregsexton/gitv.git'
   
+
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'tpope/vim-rails'
@@ -109,3 +112,40 @@ set noswapfile
 nnoremap <silent><C-e> :NERDTree<CR>
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+
+
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+
+if has('syntax')
+  augroup InsertHook
+	autocmd!
+	autocmd InsertEnter * call s:StatusLine('Enter')
+	autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+	silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+	silent exec g:hi_insert
+  else
+	highlight clear StatusLine
+	silent exec s:slhlcmd
+  endif
+endfunction
+
+function! s:GetHighlight(hi)
+  redir => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
+
