@@ -85,7 +85,6 @@ if has('vim_starting')
  "NeoBundle 'Shougo/neocomplete.vim'
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'gregsexton/gitv.git'
-  
 
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'scrooloose/nerdtree'
@@ -95,6 +94,7 @@ if has('vim_starting')
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'vim-scripts/AnsiEsc.vim'
   NeoBundle 'bronson/vim-trailing-whitespace'
+  NeoBundle 'fatih/vim-go'
 
   call neobundle#end()
 endif
