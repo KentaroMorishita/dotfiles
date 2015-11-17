@@ -1,8 +1,8 @@
 syntax enable
 set number
 set ruler
-set list
-set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
+" set list
+" set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
 set incsearch
 set hlsearch
 set nowrap
@@ -30,8 +30,8 @@ nnoremap <Space>w  :<C-u>w<CR>
 nnoremap <Space>q  :<C-u>q<CR>
 nnoremap <Space>Q  :<C-u>q!<CR>
 
-nnoremap <Space>h  ^
-nnoremap <Space>l  $
+" nnoremap <Space>h  ^
+" nnoremap <Space>l  $
 
 nnoremap k   gk
 nnoremap j   gj
@@ -83,7 +83,7 @@ if has('vim_starting')
   NeoBundle 'Shougo/neobundle.vim'
   NeoBundle 'Shougo/vimproc.vim'
  "NeoBundle 'Shougo/neocomplete.vim'
-  
+
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'tpope/vim-rails'
@@ -92,6 +92,7 @@ if has('vim_starting')
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'vim-scripts/AnsiEsc.vim'
   NeoBundle 'bronson/vim-trailing-whitespace'
+  NeoBundle "fatih/vim-go"
 
   call neobundle#end()
 endif
@@ -99,9 +100,9 @@ filetype plugin indent on     " required!
 filetype indent on
 
 
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+" imap { {}<LEFT>
+" imap [ []<LEFT>
+" imap ( ()<LEFT>
 
 set noswapfile
 
