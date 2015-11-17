@@ -1,8 +1,8 @@
 [color]
 	ui = true
 [user]
-	name = Kentaro Morishita
-	email = morishita@paxcreation.com
+	name = 
+	email = 
 [alias]
 	co = checkout
 	ci = commit
