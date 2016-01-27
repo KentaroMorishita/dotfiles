@@ -16,8 +16,11 @@ set history=2000
 set autoindent
 "set expandtab
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set helplang=ja
+
+"delete white space
+autocmd BufWritePre * :%s/\s\+$//ge
 
 "colorscheme desert
 
@@ -96,6 +99,7 @@ if has('vim_starting')
   NeoBundle 'bronson/vim-trailing-whitespace'
   NeoBundle 'fatih/vim-go'
 
+  NeoBundle 'leafgarland/typescript-vim'
   call neobundle#end()
 endif
 filetype plugin indent on     " required!
